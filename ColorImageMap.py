@@ -9,7 +9,7 @@ import math
 class colormap:
     # Creates and Instance of the Colors
     def __init__(self, k):
-
+        self.k = k
         self.color = Array(k)
 
     # Returns the number of Colors in the Map
@@ -33,10 +33,9 @@ class colormap:
 
     # Adds a Color (RGB) to the Map
     def add(self, red, green, blue):
-        k = len(self.color) - 1
-        assert self.color[k] is None, "ColorMap is Full"
         gray = self.toGray(red, green, blue)
         ndx, true = self.findPosition(gray)
+        assert len(self) < self.k, 'Color Map is Full'
         color = RGBColor(red, green, blue)
         if true == None:
             self.color.insert(ndx, color)

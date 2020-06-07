@@ -1,7 +1,9 @@
 # Implementation Test of the ColorMap 
 # and Recoloring of an Image
 from ColorImageMap import colormap
+from collections import Counter
 from PIL import Image
+
 
 # Extracts the color RGB value 
 # and Maps using the ColorMap ADT
@@ -10,8 +12,11 @@ def colour(image):
     color = Image.open(image)
     # Return the Pixel value as a List
     colors = list(color.getdata())
-    # Creates a ColorMap Object
-    color = colormap(len(colors))
+    # Gets Unque Values in the list
+    size = len(Counter(colors).keys())
+
+    # Creates a ColorMap Object of unique values
+    color = colormap(size)
     # Iterates over the ColorMap and add the value
     for value in colors:
         red, green, blue = value
