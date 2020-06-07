@@ -1,2 +1,2 @@
 # Image-Recoloring
-Recolors Image By Marching Nearest to a Color Map
+Recolors Image By Matching Nearest to a Color Map
