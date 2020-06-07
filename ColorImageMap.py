@@ -35,7 +35,7 @@ class colormap:
     def add(self, red, green, blue):
         gray = self.toGray(red, green, blue)
         ndx, true = self.findPosition(gray)
-        assert len(self) < self.k, 'Color Map is Full'
+        
         color = RGBColor(red, green, blue)
         if true == None:
             self.color.insert(ndx, color)

@@ -36,7 +36,7 @@ def recolorImage(image, colormap):
     # Iterates over the pixel value, 
     # Map and append value to new data list
     for value in image_list:
-        red, green, blue, _ = value
+        red, green, blue = value
         colour = red, green, blue
         image_recolor.append(colormap.map(colour))  
    
@@ -47,7 +47,7 @@ def recolorImage(image, colormap):
 # Create New Image
 def main():
     color = colour("colors.jpeg")
-    image_to_recolor = "Test Image.png"
+    image_to_recolor = "black and white.png"
     image, mode, size = recolorImage(image_to_recolor, color)
     im2 = Image.new(mode, size)
     im2.putdata(image)
